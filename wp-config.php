@@ -14,18 +14,27 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
+	define( 'WP_LOCAL_DEV', true );
+	include( dirname( __FILE__ ) . '/local-config.php' );
+} else {
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'database_name_here');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+	/** MySQL database username */
+	define('DB_USER', 'username_here');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'password_here');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+}
+
+/** Custom content directory */
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER[ 'HTTP-HOST' ] . '/content' );
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
