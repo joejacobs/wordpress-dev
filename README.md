@@ -19,4 +19,4 @@ Upgrading WordPress
     git pull
     git checkout version
 
-where version is the WordPress version you want to use
+where `version` is the WordPress version you want to use
