@@ -11,6 +11,12 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	define( 'DB_HOST', 'database_host' );
 }
 
+// Tell WordPress that it is in a subdirectory but should serve from root.
+// Only required for installation. Once installed, comment out and ensure 
+// correct settings in Settings > General
+// define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+// define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST']);
+
 // Custom content directory
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER[ 'HTTP_HOST' ] . '/content' );
