@@ -15,8 +15,7 @@ Make necessary changes to wp-config.php. The do one of the following:
 Upgrading WordPress
 ==================
 
-    git checkout master
-    git pull
+    git fetch --tags
     git checkout version
 
 where `version` is the WordPress version you want to use
